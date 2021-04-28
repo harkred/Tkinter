@@ -6,7 +6,7 @@ Modules used:
 
 -tkinter
 
--ttkthemes(optional)
+-ttkthemes
 
 -pickle
 
