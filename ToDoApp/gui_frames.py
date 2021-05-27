@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
-from gui_cmds import deducter
+from gui_cmds import deducter, finish_task
+from csv_manager import retrieve_data
 
 def main_window(root):
     '''Main Window'''
@@ -26,3 +27,8 @@ def pending_window(frame):
     
     tasks_list = tk.Listbox(sub_frame, selectmode=tk.MULTIPLE, width=100)
     tasks_list.grid(row=1, column=0, columnspan=2)
+    
+    for data in retrieve_data():
+        tasks_list.insert(tk.END, data)
+        
+    btn_finish.config(command=lambda:finish_task(tasks_list))
