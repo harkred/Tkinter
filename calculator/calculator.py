@@ -5,6 +5,7 @@ from calc_function import inserter, dele, clear, calculate
 
 root = ThemedTk()
 root.set_theme('aquativo')
+root.resizable(0, 0)
 
 #Main frame
 main_frame = ttk.LabelFrame(root)

@@ -16,7 +16,7 @@ def start_time(progress):
     
     msg.showerror('', 'You lost the game')
 
-def tile_matcher(btn, value):
+def tile_matcher(thread, btn, value):
     '''Tile matcher'''
     global checker, btns
     btn.config(text=str(value))
@@ -27,7 +27,7 @@ def tile_matcher(btn, value):
     
     if len(checker) == 2:
         if checker[0] == checker[1]:
-            t = threading.Thread(target=if_match)
+            t = threading.Thread(target=if_match, args=[thread])
             t.setDaemon(True)
             t.start()
         
@@ -36,7 +36,7 @@ def tile_matcher(btn, value):
             t.setDaemon(True)
             t.start()
 
-def if_match():
+def if_match(thread):
     '''To check if tile matches'''
     global checker, btns, completed
     
@@ -48,7 +48,9 @@ def if_match():
         checker = []
         btns = []
     
-    if len(completed) == 10: msg.showinfo('', 'Yay!! You have won the game')
+    if len(completed) == 10: 
+        msg.showinfo('', 'Yay!! You have won the game')
+        thread.destroy()
 
 def ifnot_match():
     '''If tile does not matches'''
