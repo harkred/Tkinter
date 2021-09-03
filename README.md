@@ -1,16 +1,3 @@
 # Tkinter
-Small tkinter applications that I have worked on to practice my skills.
 
-
-Modules used:
-
--tkinter
-
--ttkthemes
-
--pickle
-
--csv
-
-
-To be creative, you may use other modules too and make more sophisticated and helpful software.
+The repo contains a list of projects built using tkinter and some other possible libraries. The repo is open source aiming to give ideas for high school projects. Feel free to contribute to this application.
